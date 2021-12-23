@@ -26,13 +26,13 @@
 }
 
 .hero > .row-short {
+    align-items: center;
     text-align: center;
 }
 
 .hero .logo {
     width: 100%;
     height: 45px;
-    margin-bottom: 45px;
     object-fit: contain;
     object-position: center;
 }
@@ -40,22 +40,18 @@
 .hero .main-title {
     font-size: 45px;
     text-transform: uppercase;
-    margin-bottom: 15px;
 }
 
 .hero .main-description {
     font-size: 18px;
     color: #aaaeb9;
-    margin-bottom: 30px;
 }
 
 .hero .clock {
-    margin-bottom: 30px;
 }
 
 .hero .form {
     width: 90%;
-    margin: 0 5% 40px;
 }
 
 .hero .form > .input {
@@ -70,11 +66,9 @@
 
 /* MAIN CONTENT: start*/
 .column > * {
-    margin-bottom: 20px;
 }
 
 .column > *:last-child {
-    margin-bottom: 0;
 }
 
 .content-title {
@@ -101,16 +95,13 @@
 }
 
 main .form > button {
-    float: right;
 }
 
 @media (min-width: 900px) {
     main .form > input.input {
-        width: calc(50% - 10px);
     }
 
     main .form > input.input:last-of-type {
-        float: right;
     }
 }
 /* MAIN CONTENT: end */
@@ -122,7 +113,11 @@ footer.container {
     color: #fff8;
     position: relative;
 }
-.socials {
+.container > .socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 15px 0;
     border-bottom: 2px solid #fff;
     position: relative;
@@ -144,20 +139,24 @@ footer.container {
     color: var(--primary-color);
 }
 
+footer .container > .row-short {
+    gap: 0;
+}
+
 footer .logo {
     max-height: 50px;
     width: 100%;
+    margin-bottom: 20px;
     object-fit: contain;
     object-position: top;
-    margin: 45px 0;
 }
 
 footer .trio {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 footer .trio > p {
-    float: left;
     padding: 0 10px;
     position: relative;
     text-transform: capitalize;
@@ -195,8 +194,8 @@ footer .link {
 }
 
 @media (max-width: 700px) {
-    footer .trio > p {
-        width: 100%;
+    footer .trio {
+        flex-direction: column;
     }
 
     footer .trio > p::before {
